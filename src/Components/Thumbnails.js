@@ -15,7 +15,6 @@ function Thumbnails(props) {
     if (selectedImage) {
       resetImageHighlight();
     }
-    console.log(event.target);
     setSelectedImage(event.target);
     props.setSelectedThumb(Number(event.target.id));
     event.target.style.transform = "scale(1.2)";
@@ -23,16 +22,15 @@ function Thumbnails(props) {
   }
 
   function resetImageHighlight() {
-    console.log("reset", selectedImage.id, props.selectedIndex);
     selectedImage.style.transform = "scale(1)";
     selectedImage.style.transition = "transform 0.25s ease";
   }
 
   return (
-    <Container className="p-3">
+    <Container className="py-3 px-1">
       <Row>
         <Col>
-          <div className="o-carousel--item" onClick={highlightImage}>
+          <div onClick={highlightImage}>
             <img
               id="0"
               className="img-thumbnail"
@@ -42,7 +40,7 @@ function Thumbnails(props) {
           </div>
         </Col>
         <Col>
-          <div className="o-carousel--item" onClick={highlightImage}>
+          <div onClick={highlightImage}>
             <img
               id="1"
               className="img-thumbnail"
@@ -52,7 +50,7 @@ function Thumbnails(props) {
           </div>
         </Col>
         <Col>
-          <div className="o-carousel--item" onClick={highlightImage}>
+          <div onClick={highlightImage}>
             <img
               id="2"
               className="img-thumbnail"
@@ -62,7 +60,7 @@ function Thumbnails(props) {
           </div>
         </Col>
         <Col>
-          <div className="o-carousel--item" onClick={highlightImage}>
+          <div onClick={highlightImage}>
             <img
               id="3"
               className="img-thumbnail"
@@ -72,7 +70,7 @@ function Thumbnails(props) {
           </div>
         </Col>
         <Col>
-          <div className="o-carousel--item" onClick={highlightImage}>
+          <div onClick={highlightImage}>
             <img
               id="4"
               className="img-thumbnail"
@@ -82,7 +80,7 @@ function Thumbnails(props) {
           </div>
         </Col>
         <Col>
-          <div className="o-carousel--item" onClick={highlightImage}>
+          <div onClick={highlightImage}>
             <img
               id="5"
               className="img-thumbnail"

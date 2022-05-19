@@ -1,3 +1,4 @@
+import "./ControlledCarousel.css"
 import { useState, useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 
@@ -5,7 +6,6 @@ function ControlledCarousel(props) {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
-    console.log("selectedIndex", selectedIndex, props.selectedThumb);
     if (selectedIndex !== props.selectedThumb) {
       props.setSelectedIndex(selectedIndex);
     }
@@ -14,7 +14,6 @@ function ControlledCarousel(props) {
 
   useEffect(() => {
     if (props.selectedThumb !== -1) {
-      console.log(props.selectedThumb);
       handleSelect(props.selectedThumb);
     }
     props.setSelectedThumb(-1);
